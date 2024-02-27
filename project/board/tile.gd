@@ -1,3 +1,4 @@
+class_name Tile
 extends Node2D
 
 var selected := false
