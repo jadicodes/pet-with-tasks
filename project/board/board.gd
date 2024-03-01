@@ -1,17 +1,18 @@
 extends Node2D
 
-var tile_scene = preload("res://board/tile.tscn")
-var spaces := []
-var width := 4
-var height := 4
+var _tile_scene = preload("res://board/tile.tscn")
+var _spaces := []
+var _width := 4
+var _height := 4
 
 
 func _ready():
-	for x in width:
-		for y in height:
-			var node = tile_scene.instantiate()
-			node.position.x = x * 266
-			node.position.y = y * 266
+	for x in _width:
+		for y in _height:
+			var node : Tile = _tile_scene.instantiate()
+			var position_offset := node.get_side_length() + 20
+			node.position.x = x * position_offset
+			node.position.y = y * position_offset
 			add_child(node)
-			spaces.append(node)
+			_spaces.append(node)
 
