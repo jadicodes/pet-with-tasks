@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm1fq1u7wis2j"]
+[gd_scene load_steps=4 format=3 uid="uid://bm1fq1u7wis2j"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_putag"]
-
-[sub_resource type="Gradient" id="Gradient_2u7aj"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rnh2t"]
-gradient = SubResource("Gradient_2u7aj")
-width = 200
-height = 200
+[ext_resource type="Texture2D" uid="uid://b5srqgd5mpicn" path="res://player/farmer_placeholder.png" id="2_ovc0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gunnr"]
 size = Vector2(81, 55)
@@ -16,7 +10,7 @@ size = Vector2(81, 55)
 script = ExtResource("1_putag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_rnh2t")
+texture = ExtResource("2_ovc0g")
 
 [node name="EastArea" type="Area2D" parent="."]
 
