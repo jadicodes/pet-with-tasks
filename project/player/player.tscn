@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm1fq1u7wis2j"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_putag"]
+
+[sub_resource type="Gradient" id="Gradient_2u7aj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rnh2t"]
+gradient = SubResource("Gradient_2u7aj")
+width = 200
+height = 200
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gunnr"]
+size = Vector2(81, 55)
+
+[node name="Player" type="StaticBody2D"]
+script = ExtResource("1_putag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_rnh2t")
+
+[node name="East" type="CollisionShape2D" parent="."]
+position = Vector2(141, -1)
+shape = SubResource("RectangleShape2D_gunnr")
+
+[node name="West" type="CollisionShape2D" parent="."]
+position = Vector2(-141, 0)
+shape = SubResource("RectangleShape2D_gunnr")
+
+[node name="North" type="CollisionShape2D" parent="."]
+position = Vector2(0, -127)
+shape = SubResource("RectangleShape2D_gunnr")
+
+[node name="South" type="CollisionShape2D" parent="."]
+position = Vector2(0, 127)
+shape = SubResource("RectangleShape2D_gunnr")
