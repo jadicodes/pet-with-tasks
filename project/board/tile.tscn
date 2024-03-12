@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dasg3x8emo7y1"]
+[gd_scene load_steps=5 format=3 uid="uid://dasg3x8emo7y1"]
 
 [ext_resource type="Script" path="res://board/tile.gd" id="1_euijp"]
 
@@ -8,7 +8,11 @@ size = Vector2(200, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58iqo"]
 size = Vector2(200, 200)
 
-[node name="Tile" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osy87"]
+size = Vector2(200, 201)
+
+[node name="Tile" type="StaticBody2D"]
+collision_mask = 0
 script = ExtResource("1_euijp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +23,10 @@ texture = SubResource("PlaceholderTexture2D_q4mu7")
 
 [node name="MouseCatcherCollision" type="CollisionShape2D" parent="Sprite2D/MouseCatcher"]
 shape = SubResource("RectangleShape2D_58iqo")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+position = Vector2(100, 99.5)
+shape = SubResource("RectangleShape2D_osy87")
 
 [connection signal="mouse_entered" from="Sprite2D/MouseCatcher" to="." method="_on_mouse_catcher_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D/MouseCatcher" to="." method="_on_mouse_catcher_mouse_exited"]

@@ -13,6 +13,7 @@ height = 200
 size = Vector2(81, 55)
 
 [node name="Player" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource("1_putag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
