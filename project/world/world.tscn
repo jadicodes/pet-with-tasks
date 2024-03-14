@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwrxe0uh73uxr"]
+[gd_scene load_steps=3 format=3 uid="uid://cwrxe0uh73uxr"]
 
 [ext_resource type="PackedScene" uid="uid://cckb54e8hv4e0" path="res://board/board.tscn" id="1_qvm43"]
+[ext_resource type="PackedScene" uid="uid://bm1fq1u7wis2j" path="res://player/player.tscn" id="2_wcpa1"]
 
 [node name="World" type="Node2D"]
 
 [node name="Board" parent="." instance=ExtResource("1_qvm43")]
+
+[node name="Player" parent="." instance=ExtResource("2_wcpa1")]
+position = Vector2(318, 1)
+
+[connection signal="confirmed" from="Board" to="Player" method="_on_board_confirmed"]

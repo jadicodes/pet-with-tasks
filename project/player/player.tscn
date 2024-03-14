@@ -10,28 +10,38 @@ size = Vector2(81, 55)
 script = ExtResource("1_putag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(100, 100)
 texture = ExtResource("2_ovc0g")
 
 [node name="EastArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="EastCollision" type="CollisionShape2D" parent="EastArea"]
-position = Vector2(141, -1)
+position = Vector2(247, 99)
 shape = SubResource("RectangleShape2D_gunnr")
 
 [node name="WestArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="West" type="CollisionShape2D" parent="WestArea"]
-position = Vector2(-141, 0)
+position = Vector2(-49, 100)
 shape = SubResource("RectangleShape2D_gunnr")
 
 [node name="NorthArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="North" type="CollisionShape2D" parent="NorthArea"]
-position = Vector2(0, -127)
+position = Vector2(100, -31)
 shape = SubResource("RectangleShape2D_gunnr")
 
 [node name="SouthArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="South" type="CollisionShape2D" parent="SouthArea"]
-position = Vector2(0, 127)
+position = Vector2(100, 232)
 shape = SubResource("RectangleShape2D_gunnr")
+
+[connection signal="body_entered" from="EastArea" to="." method="_on_east_area_body_entered"]
+[connection signal="body_entered" from="WestArea" to="." method="_on_west_area_body_entered"]
+[connection signal="body_entered" from="NorthArea" to="." method="_on_north_area_body_entered"]
+[connection signal="body_entered" from="SouthArea" to="." method="_on_south_area_body_entered"]

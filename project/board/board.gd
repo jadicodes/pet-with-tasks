@@ -1,5 +1,8 @@
 extends Node2D
 
+
+signal confirmed
+
 var _tile_scene = preload("res://board/tile.tscn")
 var _spaces := []
 var _width := 4
@@ -14,5 +17,9 @@ func _ready():
 			node.position.x = x * position_offset
 			node.position.y = y * position_offset
 			add_child(node)
+			node.connect("confirmed", pass_confirmed_to_world.bind(node))
 			_spaces.append(node)
 
+
+func pass_confirmed_to_world(node):
+	confirmed.emit(node)
