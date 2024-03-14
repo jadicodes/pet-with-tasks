@@ -1,7 +1,7 @@
 extends Node2D
 
 
-signal confirmed
+signal confirmed_move
 
 var _tile_scene = preload("res://board/tile.tscn")
 var _spaces := []
@@ -22,4 +22,8 @@ func _ready():
 
 
 func pass_confirmed_to_world(node):
-	confirmed.emit(node)
+	confirmed_move.emit(node)
+	
+	
+func get_random_tile():
+	return _spaces.pick_random()
