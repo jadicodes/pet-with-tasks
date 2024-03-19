@@ -25,5 +25,9 @@ func pass_confirmed_to_world(node):
 	confirmed_move.emit(node)
 	
 	
-func get_random_tile():
-	return _spaces.pick_random()
+func get_pet_tile():
+	var _pet_spots = _spaces.duplicate()
+	_pet_spots.erase(_pet_spots[0])
+	print(_pet_spots)
+	print(_spaces)
+	return _pet_spots.pick_random()
