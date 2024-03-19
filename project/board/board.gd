@@ -1,7 +1,7 @@
 extends Node2D
 
 
-signal confirmed_first_option
+signal confirmed_pet_selected
 signal confirmed_move
 
 
@@ -11,28 +11,28 @@ var _width := 4
 var _height := 4
 
 
-func _ready():
+func _ready() -> void:
 	for x in _width:
 		for y in _height:
-			var node : Tile = _tile_scene.instantiate()
-			var position_offset := node.get_side_length() + 20
-			node.position.x = x * position_offset
-			node.position.y = y * position_offset
-			add_child(node)
-			node.connect("confirmed", pass_confirmed_to_world.bind(node))
-			node.connect("first_option_selected", pass_first_option_selected_to_world.bind())
-			_spaces.append(node)
+			var tile : Tile = _tile_scene.instantiate()
+			var position_offset := tile.get_side_length() + 20
+			tile.position.x = x * position_offset
+			tile.position.y = y * position_offset
+			add_child(tile)
+			tile.connect("confirmed", pass_confirmed_to_world.bind(tile))
+			tile.connect("pet_selected", pass_pet_selected_to_world.bind())
+			_spaces.append(tile)
 
 
-func pass_confirmed_to_world(node):
+func pass_confirmed_to_world(node) -> void:
 	confirmed_move.emit(node)
 
 
-func pass_first_option_selected_to_world():
-	confirmed_first_option.emit()
+func pass_pet_selected_to_world() -> void:
+	confirmed_pet_selected.emit()
 
 
-func get_pet_tile():
+func get_pet_tile() -> Tile:
 	var _pet_spots = _spaces.duplicate()
 	_pet_spots.erase(_pet_spots[0])
 	return _pet_spots.pick_random()
