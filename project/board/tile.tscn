@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dasg3x8emo7y1"]
+[gd_scene load_steps=6 format=3 uid="uid://dasg3x8emo7y1"]
 
 [ext_resource type="Script" path="res://board/tile.gd" id="1_euijp"]
 [ext_resource type="Texture2D" uid="uid://bppoohvwhpjcs" path="res://board/tile_grass.png" id="2_14a3p"]
@@ -8,6 +8,9 @@ size = Vector2(200, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osy87"]
 size = Vector2(200, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqhja"]
+size = Vector2(199, 200)
 
 [node name="Tile" type="StaticBody2D"]
 collision_mask = 0
@@ -26,5 +29,16 @@ shape = SubResource("RectangleShape2D_58iqo")
 position = Vector2(100, 99.5)
 shape = SubResource("RectangleShape2D_osy87")
 
+[node name="ObjectDetector" type="Area2D" parent="."]
+position = Vector2(100, 99.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="ObjectCollider" type="CollisionShape2D" parent="ObjectDetector"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_dqhja")
+debug_color = Color(0.870588, 0.298039, 0.466667, 0.419608)
+
 [connection signal="mouse_entered" from="Sprite2D/MouseCatcher" to="." method="_on_mouse_catcher_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D/MouseCatcher" to="." method="_on_mouse_catcher_mouse_exited"]
+[connection signal="area_entered" from="ObjectDetector" to="." method="_on_object_detector_area_entered"]

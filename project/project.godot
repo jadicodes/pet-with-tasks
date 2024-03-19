@@ -33,3 +33,4 @@ click={
 
 2d_physics/layer_1="Tiles"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Pet"

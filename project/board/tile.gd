@@ -5,11 +5,13 @@ signal confirmed
 
 var _selected := false
 var _mouse_entered := false
+var _holding := false
 
 
 func _input(event) -> void:
 	if _selected and _mouse_entered and event.is_action_released("click"):
-		confirmed.emit()
+		if not _holding:
+			confirmed.emit()
 		_selected = false
 		$Sprite2D.modulate = Color.WHITE
 
@@ -33,3 +35,7 @@ func _on_mouse_catcher_mouse_entered() -> void:
 
 func _on_mouse_catcher_mouse_exited() -> void:
 	_mouse_entered = false
+
+
+func _on_object_detector_area_entered(area: Area2D):
+	_holding = true
