@@ -16,4 +16,4 @@ position = Vector2(565, 227)
 [node name="Pet" parent="." instance=ExtResource("4_vrowb")]
 position = Vector2(565, 227)
 
-[connection signal="confirmed" from="Board" to="Player" method="_on_board_confirmed"]
+[connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]

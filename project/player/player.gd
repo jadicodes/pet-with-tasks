@@ -28,7 +28,7 @@ func _on_south_area_body_entered(body):
 	_adjacents_array.append(body)
 
 
-func _on_board_confirmed(node):
+func _on_board_confirmed_move(node):
 	if node in _adjacents_array:
 		_adjacents_array = []
 		global_position = node.global_position
