@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bm1fq1u7wis2j"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_putag"]
-[ext_resource type="Texture2D" uid="uid://b5srqgd5mpicn" path="res://player/farmer_placeholder.png" id="2_ovc0g"]
+[ext_resource type="Texture2D" uid="uid://bcplwwl4nmign" path="res://player/farmer_standing.png" id="2_fxm6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gunnr"]
 size = Vector2(81, 55)
@@ -11,7 +11,7 @@ script = ExtResource("1_putag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(100, 100)
-texture = ExtResource("2_ovc0g")
+texture = ExtResource("2_fxm6s")
 
 [node name="EastArea" type="Area2D" parent="."]
 collision_layer = 2
