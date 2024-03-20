@@ -19,11 +19,10 @@ position = Vector2(30, 32)
 shape = SubResource("RectangleShape2D_hm1lm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(95, 97)
+position = Vector2(98, 100)
 texture = ExtResource("1_o5a37")
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
-position = Vector2i(1306, 559)
 item_count = 1
 item_0/text = "Grow Up!"
 item_0/id = 0

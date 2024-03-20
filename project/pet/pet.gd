@@ -23,6 +23,8 @@ var _growth_state: int:
 func _ready() -> void:
 	_growth_state = Age.BABY
 
+func set_popup_menu_position(pos : Vector2) -> void:
+	$PopupMenu.position = pos
 
 func _grow_up() -> void:
 	if _growth_state == Age.BABY:
