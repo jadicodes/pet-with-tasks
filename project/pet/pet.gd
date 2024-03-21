@@ -7,7 +7,7 @@ enum Age {
 }
 
 var _baby_image := preload("res://pet/hedgehog_baby.png")
-var _teen_image := preload("res://icon.svg")
+var _teen_image := preload("res://pet/hedgehog_teen_standing.png")
 var _adult_image := preload("res://pet/hedgehog_adult_standing.png")
 
 var _touching_player := false

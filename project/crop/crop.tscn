@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq4jj6xw16jmt"]
 
-[ext_resource type="Texture2D" uid="uid://c8f4c2v6ls3mb" path="res://crop/crop_placeholder.png" id="1_qx6pq"]
 [ext_resource type="Script" path="res://crop/crop.gd" id="1_unr3p"]
+[ext_resource type="Texture2D" uid="uid://baw5q8kxcy88s" path="res://crop/crop_placeholder_2.png" id="2_l0b0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djtdv"]
 size = Vector2(200, 200)
@@ -18,8 +18,7 @@ shape = SubResource("RectangleShape2D_djtdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(98, 95)
-scale = Vector2(0.232292, 0.270433)
-texture = ExtResource("1_qx6pq")
+texture = ExtResource("2_l0b0x")
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 item_count = 1
