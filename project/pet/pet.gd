@@ -56,3 +56,5 @@ func _on_area_2d_area_entered(_area) -> void:
 
 func _on_area_2d_area_exited(_area) -> void:
 	_touching_player = false
+
+

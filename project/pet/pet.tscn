@@ -30,3 +30,4 @@ item_0/id = 0
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]
+[connection signal="popup_hide" from="PopupMenu" to="." method="_on_popup_menu_popup_hide"]
