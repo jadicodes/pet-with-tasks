@@ -7,6 +7,7 @@ signal confirmed_move
 
 var _tile_scene = preload("res://board/tile.tscn")
 var _spaces := []
+var _unoccupied_spaces : Array
 var _width := 4
 var _height := 4
 
@@ -22,6 +23,9 @@ func _ready() -> void:
 			tile.connect("confirmed", pass_confirmed_to_world.bind(tile))
 			tile.connect("pet_selected", pass_pet_selected_to_world.bind())
 			_spaces.append(tile)
+	_unoccupied_spaces = _spaces.duplicate()
+	# Remove first spot, player's spot
+	_unoccupied_spaces.erase(_unoccupied_spaces[0])
 
 
 func pass_confirmed_to_world(node) -> void:
@@ -32,7 +36,7 @@ func pass_pet_selected_to_world() -> void:
 	confirmed_pet_selected.emit()
 
 
-func get_pet_tile() -> Tile:
-	var _pet_spots = _spaces.duplicate()
-	_pet_spots.erase(_pet_spots[0])
-	return _pet_spots.pick_random()
+func get_unoccupied_tile() -> Tile:
+	var result = _unoccupied_spaces.pick_random()
+	_unoccupied_spaces.erase(result)
+	return result
