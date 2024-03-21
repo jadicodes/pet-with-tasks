@@ -40,7 +40,7 @@ func _grow_up() -> void:
 		_growth_state = Age.ADULT
 
 
-func _on_board_confirmed_pet_selected() -> void:
+func handle_selected() -> void:
 	if _touching_player:
 		$PopupMenu.show()
 

@@ -9,4 +9,3 @@ func _ready() -> void:
 	_pet.global_position = _board.get_unoccupied_tile().global_position
 	_pet.set_popup_menu_position(_pet.position)
 	_crop.global_position = _board.get_unoccupied_tile().global_position
-	

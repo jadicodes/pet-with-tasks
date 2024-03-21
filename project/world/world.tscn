@@ -21,4 +21,3 @@ position = Vector2(565, 227)
 position = Vector2(310, -1)
 
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
-[connection signal="confirmed_pet_selected" from="Board" to="Pet" method="_on_board_confirmed_pet_selected"]

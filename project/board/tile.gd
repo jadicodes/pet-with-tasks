@@ -2,11 +2,12 @@ class_name Tile
 extends Node2D
 
 signal confirmed
-signal pet_selected
+signal object_selected
 
 var _selected := false
 var _mouse_entered := false
 var _holding := false
+var held_object
 @onready var _tile_sprite : Sprite2D = $Sprite2D
 
 
@@ -20,7 +21,7 @@ func _input(event) -> void:
 	elif _mouse_entered and event.is_action_released("click"):
 		_selected = true
 		if _holding:
-			pet_selected.emit()
+			held_object.handle_selected()
 		_tile_sprite.modulate = Color.YELLOW
 
 	elif event.is_action_released("click"):
@@ -42,5 +43,6 @@ func _on_mouse_catcher_mouse_exited() -> void:
 	_mouse_entered = false
 
 
-func _on_object_detector_area_entered(_area) -> void:
+func _on_object_detector_area_entered(area) -> void:
 	_holding = true
+	held_object = area.get_parent()

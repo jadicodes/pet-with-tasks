@@ -1,7 +1,6 @@
 extends Node2D
 
 
-signal confirmed_pet_selected
 signal confirmed_move
 
 
@@ -21,7 +20,6 @@ func _ready() -> void:
 			tile.position.y = y * position_offset
 			add_child(tile)
 			tile.connect("confirmed", pass_confirmed_to_world.bind(tile))
-			tile.connect("pet_selected", pass_pet_selected_to_world.bind())
 			_spaces.append(tile)
 	_unoccupied_spaces = _spaces.duplicate()
 	# Remove first spot, player's spot
@@ -30,10 +28,6 @@ func _ready() -> void:
 
 func pass_confirmed_to_world(node) -> void:
 	confirmed_move.emit(node)
-
-
-func pass_pet_selected_to_world() -> void:
-	confirmed_pet_selected.emit()
 
 
 func get_unoccupied_tile() -> Tile:
