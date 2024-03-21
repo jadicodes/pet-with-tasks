@@ -19,7 +19,6 @@ var _growth_state: int:
 		elif state == Age.TEEN:
 			pet_sprite.texture = _teen_image
 		else:
-			print("hello?")
 			pet_sprite.texture = _adult_image
 		_growth_state = state
 
@@ -29,18 +28,16 @@ var _growth_state: int:
 func _ready() -> void:
 	_growth_state = Age.BABY
 
+
 func set_popup_menu_position(pos : Vector2) -> void:
 	$PopupMenu.position = pos
 
+
 func _grow_up() -> void:
-	print(_growth_state)
 	if _growth_state == Age.BABY:
-		print("ok")
 		_growth_state = Age.TEEN
 	elif _growth_state == Age.TEEN:
-		print('teen')
 		_growth_state = Age.ADULT
-	print(_growth_state)
 
 
 func _on_board_confirmed_pet_selected() -> void:
