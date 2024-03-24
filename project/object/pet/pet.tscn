@@ -1,22 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://csfecr8bqwxp1"]
 
 [ext_resource type="Texture2D" uid="uid://cr0vg1igrsupg" path="res://icon.svg" id="1_o5a37"]
-[ext_resource type="Script" path="res://pet/pet.gd" id="1_rsjlh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm1lm"]
-size = Vector2(200, 200)
+[ext_resource type="Script" path="res://object/pet/pet.gd" id="1_rsjlh"]
+[ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://object/player_detector.tscn" id="3_b48vj"]
 
 [node name="Pet" type="Node2D"]
 script = ExtResource("1_rsjlh")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(70, 68)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(30, 32)
-shape = SubResource("RectangleShape2D_hm1lm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(98, 100)
@@ -27,7 +16,7 @@ item_count = 1
 item_0/text = "Grow Up!"
 item_0/id = 0
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="PlayerDetector" parent="." instance=ExtResource("3_b48vj")]
+
 [connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]
 [connection signal="popup_hide" from="PopupMenu" to="." method="_on_popup_menu_popup_hide"]

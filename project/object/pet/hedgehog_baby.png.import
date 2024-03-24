@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmrucjlanjjrj"
-path="res://.godot/imported/hedgehog_adult_standing.png-32cee62986cdfd01bb7edd41a34ab049.ctex"
+uid="uid://64oqhx2c2w0v"
+path="res://.godot/imported/hedgehog_baby.png-107ede8dad0545f948a9f707ef1d99e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pet/hedgehog_adult_standing.png"
-dest_files=["res://.godot/imported/hedgehog_adult_standing.png-32cee62986cdfd01bb7edd41a34ab049.ctex"]
+source_file="res://object/pet/hedgehog_baby.png"
+dest_files=["res://.godot/imported/hedgehog_baby.png-107ede8dad0545f948a9f707ef1d99e7.ctex"]
 
 [params]
 
