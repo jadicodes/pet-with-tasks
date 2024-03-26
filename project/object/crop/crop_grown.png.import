@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baw5q8kxcy88s"
-path="res://.godot/imported/crop_placeholder_2.png-084a6ac50423e1e869adcb52a4ea9aa4.ctex"
+uid="uid://ctlmemdu732gf"
+path="res://.godot/imported/crop_grown.png-f08eeb42161210df8645178819ee2b18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://object/crop/crop_placeholder_2.png"
-dest_files=["res://.godot/imported/crop_placeholder_2.png-084a6ac50423e1e869adcb52a4ea9aa4.ctex"]
+source_file="res://object/crop/crop_grown.png"
+dest_files=["res://.godot/imported/crop_grown.png-f08eeb42161210df8645178819ee2b18.ctex"]
 
 [params]
 

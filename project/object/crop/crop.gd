@@ -5,7 +5,7 @@ enum Age {
 	READY,
 }
 
-var _ready_image := preload("res://object/crop/crop_placeholder_2.png")
+var _ready_image := preload("res://object/crop/crop_grown.png")
 var _not_ready_image := preload("res://icon.svg")
 
 @onready var crop_sprite : Sprite2D = $Sprite2D
