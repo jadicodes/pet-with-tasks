@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq4jj6xw16jmt"]
 
 [ext_resource type="Script" path="res://object/crop/crop.gd" id="1_unr3p"]
-[ext_resource type="Texture2D" uid="uid://baw5q8kxcy88s" path="res://object/crop/crop_placeholder_2.png" id="2_l0b0x"]
+[ext_resource type="Texture2D" uid="uid://cr0vg1igrsupg" path="res://icon.svg" id="2_hxi1a"]
 [ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://object/player_detector.tscn" id="3_h6x1l"]
 
 [node name="Crop" type="Node2D"]
@@ -9,7 +9,7 @@ script = ExtResource("1_unr3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(98, 95)
-texture = ExtResource("2_l0b0x")
+texture = ExtResource("2_hxi1a")
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 item_count = 1
