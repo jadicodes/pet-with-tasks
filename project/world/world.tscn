@@ -17,7 +17,7 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1625.0
 offset_bottom = 928.0
-color = Color(0.568627, 0.458824, 0.380392, 1)
+color = Color(0.501961, 0.403922, 0.333333, 1)
 
 [node name="Board" parent="." instance=ExtResource("1_qvm43")]
 

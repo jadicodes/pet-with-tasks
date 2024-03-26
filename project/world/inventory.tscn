@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6qvdu61t8yqp"]
 
 [ext_resource type="Script" path="res://world/inventory.gd" id="1_arq8y"]
-[ext_resource type="Texture2D" uid="uid://ctlmemdu732gf" path="res://object/crop/crop_grown.png" id="2_w8ytl"]
+[ext_resource type="Texture2D" uid="uid://y051nn1nheb3" path="res://world/crop_tomato_inventory.png" id="2_etbwg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bibf0"]
 font_size = 21
@@ -26,7 +26,7 @@ color = Color(0.313726, 0.372549, 0.592157, 1)
 [node name="Tomato" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(120, 115)
-texture = ExtResource("2_w8ytl")
+texture = ExtResource("2_etbwg")
 
 [node name="TomatoLabel" type="Label" parent="Tomato"]
 offset_left = 13.0

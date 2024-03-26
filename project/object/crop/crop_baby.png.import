@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ocrckruuegx"
-path="res://.godot/imported/crop_grown.png-f08eeb42161210df8645178819ee2b18.ctex"
+uid="uid://bpns0ef1qr1ce"
+path="res://.godot/imported/crop_baby.png-10da75c39bdad8572c82376cb0256f30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://object/crop/crop_grown.png"
-dest_files=["res://.godot/imported/crop_grown.png-f08eeb42161210df8645178819ee2b18.ctex"]
+source_file="res://object/crop/crop_baby.png"
+dest_files=["res://.godot/imported/crop_baby.png-10da75c39bdad8572c82376cb0256f30.ctex"]
 
 [params]
 

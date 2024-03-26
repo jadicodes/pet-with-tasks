@@ -8,7 +8,7 @@ enum Growth {
 }
 
 var _ready_image := preload("res://object/crop/crop_grown.png")
-var _not_ready_image := preload("res://icon.svg")
+var _not_ready_image := preload("res://object/crop/crop_baby.png")
 
 @onready var crop_sprite : Sprite2D = $Sprite2D
 @onready var _player_detector : PlayerDetector = $PlayerDetector
