@@ -1,3 +1,4 @@
+class_name Board
 extends Node2D
 
 
@@ -31,6 +32,6 @@ func pass_confirmed_to_world(node) -> void:
 
 
 func get_unoccupied_tile() -> Tile:
-	var result = _unoccupied_spaces.pick_random()
+	var result: Tile = _unoccupied_spaces.pick_random()
 	_unoccupied_spaces.erase(result)
 	return result

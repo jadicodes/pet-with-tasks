@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://y051nn1nheb3" path="res://world/crop_tomato_inventory.png" id="2_etbwg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bibf0"]
-font_size = 21
+font_size = 24
 font_color = Color(0.117647, 0.117647, 0.117647, 1)
+outline_size = 8
 
 [node name="Inventory" type="Node2D"]
 script = ExtResource("1_arq8y")
@@ -24,14 +25,13 @@ offset_bottom = 1288.0
 color = Color(0.313726, 0.372549, 0.592157, 1)
 
 [node name="Tomato" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(120, 115)
 texture = ExtResource("2_etbwg")
 
 [node name="TomatoLabel" type="Label" parent="Tomato"]
-offset_left = 13.0
-offset_top = 80.0
-offset_right = 107.0
-offset_bottom = 110.0
-text = "AMOUNT"
+offset_left = 61.0
+offset_top = 67.0
+offset_right = 169.0
+offset_bottom = 101.0
+text = "XX"
 label_settings = SubResource("LabelSettings_bibf0")

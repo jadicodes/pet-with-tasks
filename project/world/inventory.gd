@@ -3,11 +3,11 @@ extends Node2D
 
 var _tomato_count := 0
 
-@onready var _tomato_sprite = $Tomato
-@onready var _tomato_label = $Tomato/TomatoLabel
+@onready var _tomato_sprite: Sprite2D = $Tomato
+@onready var _tomato_label: Label = $Tomato/TomatoLabel
 
 
-func _ready():
+func _ready() -> void:
 	_tomato_sprite.hide()
 
 

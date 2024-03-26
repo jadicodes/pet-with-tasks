@@ -1,3 +1,4 @@
+class_name Crop
 extends Node2D
 
 signal harvested
@@ -10,9 +11,9 @@ enum Growth {
 var _ready_image := preload("res://object/crop/crop_grown.png")
 var _not_ready_image := preload("res://object/crop/crop_baby.png")
 
-@onready var crop_sprite : Sprite2D = $Sprite2D
-@onready var _player_detector : PlayerDetector = $PlayerDetector
-@onready var _popup : PopupMenu = $PopupMenu
+@onready var crop_sprite: Sprite2D = $Sprite2D
+@onready var _player_detector: PlayerDetector = $PlayerDetector
+@onready var _popup: PopupMenu = $PopupMenu
 
 # In order for set() to go off, cannot be initially declared
 var _growth_state: int: 
@@ -40,7 +41,7 @@ func _on_popup_menu_id_pressed(id) -> void:
 		_grow_up()
 
 
-func set_popup_menu_position(pos : Vector2) -> void:
+func set_popup_menu_position(pos: Vector2) -> void:
 	_popup.position = pos
 
 

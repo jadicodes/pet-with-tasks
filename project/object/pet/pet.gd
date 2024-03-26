@@ -1,3 +1,4 @@
+class_name Pet
 extends Node2D
 
 enum Age {
@@ -21,16 +22,16 @@ var _growth_state: int:
 			pet_sprite.texture = _adult_image
 		_growth_state = state
 
-@onready var pet_sprite : Sprite2D = $Sprite2D
-@onready var _player_detector : PlayerDetector = $PlayerDetector
-@onready var _popup : PopupMenu = $PopupMenu
+@onready var pet_sprite: Sprite2D = $Sprite2D
+@onready var _player_detector: PlayerDetector = $PlayerDetector
+@onready var _popup: PopupMenu = $PopupMenu
 
 
 func _ready() -> void:
 	_growth_state = Age.BABY
 
 
-func set_popup_menu_position(pos : Vector2) -> void:
+func set_popup_menu_position(pos: Vector2) -> void:
 	_popup.position = pos
 
 
