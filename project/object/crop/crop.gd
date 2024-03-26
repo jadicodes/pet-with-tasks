@@ -17,8 +17,10 @@ var _growth_state: int:
 	set(state):
 		if state == Age.NOT_READY:
 			crop_sprite.texture = _not_ready_image
+			_popup.set_item_text(0, "Grow")
 		elif state == Age.READY:
 			crop_sprite.texture = _ready_image
+			_popup.set_item_text(0, "Harvest")
 		_growth_state = state
 
 
@@ -31,7 +33,7 @@ func handle_selected() -> void:
 		$PopupMenu.show()
 
 
-func _on_popup_menu_id_pressed(id):
+func _on_popup_menu_id_pressed(id) -> void:
 	if id == 0:
 		_grow_up()
 
