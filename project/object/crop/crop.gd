@@ -1,6 +1,8 @@
 extends Node2D
 
-enum Age {
+signal harvested
+
+enum Growth {
 	NOT_READY,
 	READY,
 }
@@ -15,17 +17,17 @@ var _not_ready_image := preload("res://icon.svg")
 # In order for set() to go off, cannot be initially declared
 var _growth_state: int: 
 	set(state):
-		if state == Age.NOT_READY:
+		if state == Growth.NOT_READY:
 			crop_sprite.texture = _not_ready_image
 			_popup.set_item_text(0, "Grow")
-		elif state == Age.READY:
+		elif state == Growth.READY:
 			crop_sprite.texture = _ready_image
 			_popup.set_item_text(0, "Harvest")
 		_growth_state = state
 
 
 func _ready() -> void:
-	_growth_state = Age.NOT_READY
+	_growth_state = Growth.NOT_READY
 
 
 func handle_selected() -> void:
@@ -43,7 +45,8 @@ func set_popup_menu_position(pos : Vector2) -> void:
 
 
 func _grow_up() -> void:
-	if _growth_state == Age.NOT_READY:
-		_growth_state = Age.READY
-	elif _growth_state == Age.READY:
-		_growth_state = Age.NOT_READY
+	if _growth_state == Growth.NOT_READY:
+		_growth_state = Growth.READY
+	elif _growth_state == Growth.READY:
+		_growth_state = Growth.NOT_READY
+		harvested.emit()

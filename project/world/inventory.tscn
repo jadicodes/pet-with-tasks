@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6qvdu61t8yqp"]
+
+[ext_resource type="Script" path="res://world/inventory.gd" id="1_arq8y"]
+[ext_resource type="Texture2D" uid="uid://ctlmemdu732gf" path="res://object/crop/crop_grown.png" id="2_w8ytl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bibf0"]
+font_size = 21
+font_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_arq8y")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 236.0
+offset_bottom = 900.0
+color = Color(0.588235, 0.662745, 0.823529, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = -4.0
+offset_right = 262.0
+offset_bottom = 1288.0
+color = Color(0.313726, 0.372549, 0.592157, 1)
+
+[node name="Tomato" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(120, 115)
+texture = ExtResource("2_w8ytl")
+
+[node name="TomatoLabel" type="Label" parent="Tomato"]
+offset_left = 13.0
+offset_top = 80.0
+offset_right = 107.0
+offset_bottom = 110.0
+text = "AMOUNT"
+label_settings = SubResource("LabelSettings_bibf0")

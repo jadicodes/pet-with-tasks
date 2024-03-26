@@ -10,3 +10,7 @@ func _ready() -> void:
 	_pet.set_popup_menu_position(_pet.position)
 	_crop.global_position = _board.get_unoccupied_tile().global_position
 	_crop.set_popup_menu_position(_crop.position)
+
+
+func _on_crop_harvested():
+	pass # Replace with function body.
