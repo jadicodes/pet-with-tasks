@@ -34,3 +34,4 @@ position = Vector2(310, -1)
 
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
 [connection signal="harvested" from="Crop" to="Inventory" method="increase_tomato_count"]
+[connection signal="tomato_collected" from="Inventory" to="Pet" method="_on_inventory_tomato_collected"]

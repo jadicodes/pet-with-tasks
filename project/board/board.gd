@@ -16,7 +16,7 @@ func _ready() -> void:
 	for x in _width:
 		for y in _height:
 			var tile : Tile = _tile_scene.instantiate()
-			var position_offset := tile.get_side_length() + 20
+			var position_offset := tile.get_side_length() + 10
 			tile.position.x = x * position_offset
 			tile.position.y = y * position_offset
 			add_child(tile)

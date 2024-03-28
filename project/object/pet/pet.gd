@@ -10,6 +10,7 @@ enum Age {
 var _baby_image := preload("res://object/pet/hedgehog_baby.png")
 var _teen_image := preload("res://object/pet/hedgehog_teen_standing.png")
 var _adult_image := preload("res://object/pet/hedgehog_adult_standing.png")
+var has_tomato = false
 
 # In order for set() to go off, cannot be initially declared
 var _growth_state: int: 
@@ -23,16 +24,14 @@ var _growth_state: int:
 		_growth_state = state
 
 @onready var pet_sprite: Sprite2D = $Sprite2D
-@onready var _player_detector: PlayerDetector = $PlayerDetector
-@onready var _popup: PopupMenu = $PopupMenu
+@onready var _feed_button: Button = $FeedButton
+@onready var _sleep_button: Button = $SleepButton
 
 
 func _ready() -> void:
 	_growth_state = Age.BABY
-
-
-func set_popup_menu_position(pos: Vector2) -> void:
-	_popup.position = pos
+	_feed_button.disabled = true
+	_sleep_button.disabled = true
 
 
 func _grow_up() -> void:
@@ -42,13 +41,21 @@ func _grow_up() -> void:
 		_growth_state = Age.ADULT
 
 
-func handle_selected() -> void:
-	if _player_detector.touching_player:
-		_popup.show()
+
+func _on_feed_button_pressed():
+	_grow_up()
 
 
-func _on_popup_menu_id_pressed(id: int) -> void:
-	if id == 0:
-		_grow_up()
+func _on_player_detector_area_entered(_area):
+	if has_tomato == true:
+		_feed_button.disabled = false
+	_sleep_button.disabled = false
 
 
+func _on_player_detector_area_exited(_area):
+	_feed_button.disabled = true
+	_sleep_button.disabled = true
+
+
+func _on_inventory_tomato_collected():
+	has_tomato = true

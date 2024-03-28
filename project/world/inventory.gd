@@ -1,6 +1,9 @@
 extends Node2D
 
 
+signal tomato_collected
+
+
 var _tomato_count := 0
 
 @onready var _tomato_sprite: Sprite2D = $Tomato
@@ -15,6 +18,7 @@ func increase_tomato_count() -> void:
 	_tomato_count += 1
 	_display_tomato()
 	_update_tomato_label()
+	tomato_collected.emit()
 
 
 func get_tomato_count() -> int:
