@@ -24,15 +24,13 @@ var _growth_state: int:
 
 @onready var pet_sprite: Sprite2D = $Sprite2D
 @onready var _player_detector: PlayerDetector = $PlayerDetector
-@onready var _popup: PopupMenu = $PopupMenu
+@onready var _buttons_list : Array[Button] = [$FeedButton, $SingButton]
 
 
 func _ready() -> void:
 	_growth_state = Age.BABY
-
-
-func set_popup_menu_position(pos: Vector2) -> void:
-	_popup.position = pos
+	_player_detector.set_buttons_list(_buttons_list)
+	
 
 
 func _grow_up() -> void:
@@ -41,14 +39,5 @@ func _grow_up() -> void:
 	elif _growth_state == Age.TEEN:
 		_growth_state = Age.ADULT
 
-
-func handle_selected() -> void:
-	if _player_detector.touching_player:
-		_popup.show()
-
-
-func _on_popup_menu_id_pressed(id: int) -> void:
-	if id == 0:
-		_grow_up()
 
 

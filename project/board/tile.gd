@@ -21,7 +21,6 @@ func _input(event) -> void:
 	elif _mouse_entered and event.is_action_released("click"):
 		_selected = true
 		if _holding:
-			held_object.handle_selected()
 			_selected = false
 		_tile_sprite.modulate = Color.YELLOW
 

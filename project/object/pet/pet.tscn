@@ -11,12 +11,20 @@ script = ExtResource("1_rsjlh")
 position = Vector2(98, 100)
 texture = ExtResource("1_o5a37")
 
-[node name="PopupMenu" type="PopupMenu" parent="."]
-item_count = 1
-item_0/text = "Grow Up!"
-item_0/id = 0
-
 [node name="PlayerDetector" parent="." instance=ExtResource("3_b48vj")]
 
-[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]
-[connection signal="popup_hide" from="PopupMenu" to="." method="_on_popup_menu_popup_hide"]
+[node name="FeedButton" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 166.0
+offset_right = 65.0
+offset_bottom = 197.0
+text = "Feed"
+
+[node name="SingButton" type="Button" parent="."]
+offset_left = 132.0
+offset_top = 166.0
+offset_right = 177.0
+offset_bottom = 197.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Sing"
