@@ -33,4 +33,6 @@ position = Vector2(310, -1)
 [node name="Inventory" parent="." instance=ExtResource("6_82pw5")]
 
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
-[connection signal="harvested" from="Crop" to="Inventory" method="increase_tomato_count"]
+[connection signal="request_tomato" from="Pet" to="Inventory" method="_on_pet_request_tomato"]
+[connection signal="harvested" from="Crop" to="Inventory" method="_on_crop_harvested"]
+[connection signal="tomato_consumed" from="Inventory" to="Pet" method="_on_inventory_tomato_consumed"]

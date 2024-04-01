@@ -19,6 +19,5 @@ func _on_area_exited(_area) -> void:
 
 
 func _disable_buttons(disable: bool) -> void:
-	print(_buttons_list)
 	for button in _buttons_list:
 		button.disabled = disable

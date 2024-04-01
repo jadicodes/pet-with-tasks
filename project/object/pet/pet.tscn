@@ -28,3 +28,6 @@ offset_bottom = 197.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Sing"
+
+[connection signal="pressed" from="FeedButton" to="." method="_on_feed_button_pressed"]
+[connection signal="pressed" from="SingButton" to="." method="_on_sing_button_pressed"]

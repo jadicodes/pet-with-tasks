@@ -7,9 +7,15 @@ enum Age {
 	ADULT,
 }
 
+
+signal request_tomato
+
+
 var _baby_image := preload("res://object/pet/hedgehog_baby.png")
 var _teen_image := preload("res://object/pet/hedgehog_teen_standing.png")
 var _adult_image := preload("res://object/pet/hedgehog_adult_standing.png")
+
+var _had_food := false
 
 # In order for set() to go off, cannot be initially declared
 var _growth_state: int: 
@@ -30,7 +36,6 @@ var _growth_state: int:
 func _ready() -> void:
 	_growth_state = Age.BABY
 	_player_detector.set_buttons_list(_buttons_list)
-	
 
 
 func _grow_up() -> void:
@@ -40,4 +45,15 @@ func _grow_up() -> void:
 		_growth_state = Age.ADULT
 
 
+func _on_sing_button_pressed() -> void:
+	if _had_food:
+		_grow_up()
+		_had_food = false
 
+
+func _on_feed_button_pressed() -> void:
+	request_tomato.emit()
+
+
+func _on_inventory_tomato_consumed() -> void:
+	_had_food = true
