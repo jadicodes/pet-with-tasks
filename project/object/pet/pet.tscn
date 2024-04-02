@@ -1,33 +1,36 @@
 [gd_scene load_steps=4 format=3 uid="uid://csfecr8bqwxp1"]
 
-[ext_resource type="Texture2D" uid="uid://cr0vg1igrsupg" path="res://icon.svg" id="1_o5a37"]
 [ext_resource type="Script" path="res://object/pet/pet.gd" id="1_rsjlh"]
+[ext_resource type="Texture2D" uid="uid://bmrucjlanjjrj" path="res://object/pet/hedgehog_adult_standing.png" id="2_pc5o0"]
 [ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://object/player_detector.tscn" id="3_b48vj"]
 
 [node name="Pet" type="Node2D"]
 script = ExtResource("1_rsjlh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(98, 100)
-texture = ExtResource("1_o5a37")
-
 [node name="PlayerDetector" parent="." instance=ExtResource("3_b48vj")]
 
 [node name="FeedButton" type="Button" parent="."]
-offset_left = 20.0
-offset_top = 166.0
-offset_right = 65.0
-offset_bottom = 197.0
+texture_filter = 1
+offset_left = 15.0
+offset_top = 147.0
+offset_right = 60.0
+offset_bottom = 187.0
 text = "Feed"
 
 [node name="SingButton" type="Button" parent="."]
-offset_left = 132.0
-offset_top = 166.0
-offset_right = 177.0
-offset_bottom = 197.0
+texture_filter = 1
+offset_left = 150.0
+offset_top = 155.0
+offset_right = 195.0
+offset_bottom = 186.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Sing"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(98, 100)
+texture = ExtResource("2_pc5o0")
+
+[connection signal="next_to_player_changed" from="PlayerDetector" to="." method="_on_player_detector_next_to_player_changed"]
 [connection signal="pressed" from="FeedButton" to="." method="_on_feed_button_pressed"]
 [connection signal="pressed" from="SingButton" to="." method="_on_sing_button_pressed"]

@@ -1,23 +1,16 @@
 class_name PlayerDetector
 extends Area2D
 
+signal next_to_player_changed
 
-var _buttons_list : Array[Button]
-
-
-func set_buttons_list(list: Array[Button]) -> void:
-	_buttons_list = list.duplicate()
-	_disable_buttons(true)
+var next_to_player: bool
 
 
 func _on_area_entered(_area) -> void:
-	_disable_buttons(false)
+	next_to_player = true
+	next_to_player_changed.emit()
 
 
 func _on_area_exited(_area) -> void:
-	_disable_buttons(true)
-
-
-func _disable_buttons(disable: bool) -> void:
-	for button in _buttons_list:
-		button.disabled = disable
+	next_to_player = false
+	next_to_player_changed.emit()

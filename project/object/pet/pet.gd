@@ -15,7 +15,16 @@ var _baby_image := preload("res://object/pet/hedgehog_baby.png")
 var _teen_image := preload("res://object/pet/hedgehog_teen_standing.png")
 var _adult_image := preload("res://object/pet/hedgehog_adult_standing.png")
 
+@onready var _feed_button: Button = $FeedButton
+@onready var _sing_button: Button = $SingButton
+
 var _had_food := false
+var _tomato_count_valid := false:
+	set(state):
+		_tomato_count_valid = state
+		_feed_button.disabled = not (_tomato_count_valid and $PlayerDetector.next_to_player)
+
+
 
 # In order for set() to go off, cannot be initially declared
 var _growth_state: int: 
@@ -28,14 +37,15 @@ var _growth_state: int:
 			pet_sprite.texture = _adult_image
 		_growth_state = state
 
+
 @onready var pet_sprite: Sprite2D = $Sprite2D
 @onready var _player_detector: PlayerDetector = $PlayerDetector
-@onready var _buttons_list : Array[Button] = [$FeedButton, $SingButton]
 
 
 func _ready() -> void:
 	_growth_state = Age.BABY
-	_player_detector.set_buttons_list(_buttons_list)
+	_feed_button.disabled = true
+	_sing_button.disabled = true
 
 
 func _grow_up() -> void:
@@ -57,3 +67,16 @@ func _on_feed_button_pressed() -> void:
 
 func _on_inventory_tomato_consumed() -> void:
 	_had_food = true
+
+
+func _on_inventory_has_tomato():
+	_tomato_count_valid = true
+
+
+func _on_inventory_has_no_tomato():
+	_tomato_count_valid = false
+
+
+func _on_player_detector_next_to_player_changed():
+	_sing_button.disabled = not _player_detector.next_to_player
+	_feed_button.disabled = not (_tomato_count_valid and  _player_detector.next_to_player)

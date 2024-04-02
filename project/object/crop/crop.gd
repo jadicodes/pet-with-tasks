@@ -29,7 +29,7 @@ var _growth_state: int:
 
 func _ready() -> void:
 	_growth_state = Growth.NOT_READY
-	_player_detector.set_buttons_list([_button])
+	_button.disabled = true
 
 
 func _grow_up() -> void:
@@ -38,3 +38,7 @@ func _grow_up() -> void:
 	elif _growth_state == Growth.READY:
 		_growth_state = Growth.NOT_READY
 		harvested.emit()
+
+
+func _on_player_detector_next_to_player_changed():
+	_button.disabled = not _player_detector.next_to_player
