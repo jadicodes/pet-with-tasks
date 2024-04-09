@@ -10,10 +10,14 @@ var _tomato_count := 0
 
 @onready var _tomato_sprite: Sprite2D = $Tomato
 @onready var _tomato_label: Label = $Tomato/TomatoLabel
+@onready var _box_sprite: Sprite2D = $Box
+@onready var _position_marker: Marker2D = $Marker2D
 
 
 func _ready() -> void:
 	_tomato_sprite.hide()
+	_box_sprite.global_position = _position_marker.global_position
+	_tomato_sprite.global_position = _position_marker.global_position
 
 
 func _change_tomato_count(amount: int) -> void:
