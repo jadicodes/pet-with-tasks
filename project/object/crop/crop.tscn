@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://object/crop/crop.gd" id="1_unr3p"]
 [ext_resource type="Texture2D" uid="uid://bpns0ef1qr1ce" path="res://object/crop/crop_baby.png" id="2_llori"]
-[ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://object/player_detector.tscn" id="3_h6x1l"]
+[ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://common/player_detector.tscn" id="3_h6x1l"]
 
 [node name="Crop" type="Node2D"]
 script = ExtResource("1_unr3p")

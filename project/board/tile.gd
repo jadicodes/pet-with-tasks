@@ -8,7 +8,8 @@ var _selected := false
 var _mouse_entered := false
 var _holding := false
 var held_object
-@onready var _tile_sprite : Sprite2D = $Sprite2D
+@onready var _tile_sprite: Sprite2D = $Sprite2D
+@onready var _player_detector: PlayerDetector = $PlayerDetector
 
 
 func _input(event) -> void:
@@ -22,7 +23,10 @@ func _input(event) -> void:
 		_selected = true
 		if _holding:
 			_selected = false
-		_tile_sprite.modulate = Color.YELLOW
+		if _player_detector.next_to_player:
+			_tile_sprite.modulate = Color.YELLOW
+		else:
+			_tile_sprite.modulate = Color("#b9acf1")
 
 	elif event.is_action_released("click"):
 		_selected = false
@@ -46,3 +50,13 @@ func _on_mouse_catcher_mouse_exited() -> void:
 func _on_object_detector_area_entered(area) -> void:
 	_holding = true
 	held_object = area.get_parent()
+
+
+func _on_player_detector_next_to_player_changed():
+	if _player_detector.next_to_player:
+		$CanvasGroup.show()
+		$AnimationPlayer.play("fade_in_and_out")
+	else:
+		$CanvasGroup.hide()
+		$AnimationPlayer.stop()
+		

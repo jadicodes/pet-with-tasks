@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://object/pet/pet.gd" id="1_rsjlh"]
 [ext_resource type="Texture2D" uid="uid://bmrucjlanjjrj" path="res://object/pet/hedgehog_adult_standing.png" id="2_pc5o0"]
-[ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://object/player_detector.tscn" id="3_b48vj"]
+[ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://common/player_detector.tscn" id="3_b48vj"]
 
 [node name="Pet" type="Node2D"]
 script = ExtResource("1_rsjlh")

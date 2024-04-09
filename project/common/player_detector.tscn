@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6uxofj1uehuv"]
 
-[ext_resource type="Script" path="res://object/player_detector.gd" id="1_ax1j2"]
+[ext_resource type="Script" path="res://common/player_detector.gd" id="1_q7jom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob6qa"]
 size = Vector2(200, 200)
@@ -8,7 +8,7 @@ size = Vector2(200, 200)
 [node name="PlayerDetector" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_ax1j2")
+script = ExtResource("1_q7jom")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(100, 100)
