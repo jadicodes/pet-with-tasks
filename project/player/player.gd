@@ -7,6 +7,7 @@ func _on_board_confirmed_move(node) -> void:
 	if node in _adjacents_array:
 		_adjacents_array = []
 		global_position = node.global_position
+		MoveCounter.decrease()
 
 
 func _on_east_area_body_entered(body) -> void:

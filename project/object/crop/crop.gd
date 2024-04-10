@@ -33,6 +33,7 @@ func _ready() -> void:
 
 
 func _grow_up() -> void:
+	MoveCounter.decrease()
 	if _growth_state == Growth.NOT_READY:
 		_growth_state = Growth.READY
 	elif _growth_state == Growth.READY:

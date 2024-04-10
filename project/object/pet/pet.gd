@@ -56,6 +56,7 @@ func _grow_up() -> void:
 
 
 func _on_sing_button_pressed() -> void:
+	MoveCounter.decrease()
 	if _had_food:
 		_grow_up()
 		_had_food = false
@@ -67,6 +68,7 @@ func _on_feed_button_pressed() -> void:
 
 func _on_inventory_tomato_consumed() -> void:
 	_had_food = true
+	MoveCounter.decrease()
 
 
 func _on_inventory_has_tomato():
