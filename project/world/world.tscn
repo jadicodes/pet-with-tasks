@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bm1fq1u7wis2j" path="res://player/player.tscn" id="2_wcpa1"]
 [ext_resource type="PackedScene" uid="uid://csfecr8bqwxp1" path="res://object/pet/pet.tscn" id="4_vrowb"]
 [ext_resource type="PackedScene" uid="uid://dq4jj6xw16jmt" path="res://object/crop/crop.tscn" id="5_n8c0b"]
-[ext_resource type="PackedScene" uid="uid://b6qvdu61t8yqp" path="res://world/inventory.tscn" id="6_82pw5"]
+[ext_resource type="PackedScene" uid="uid://b6qvdu61t8yqp" path="res://world/ui/inventory.tscn" id="6_82pw5"]
 [ext_resource type="AudioStream" uid="uid://cmwdvr8bgn6vr" path="res://world/game_theme.ogg" id="7_4lh8e"]
-[ext_resource type="PackedScene" uid="uid://cj2jyu7eh2hd0" path="res://world/move_counter_display.tscn" id="8_52ca1"]
+[ext_resource type="PackedScene" uid="uid://cj2jyu7eh2hd0" path="res://world/ui/move_counter_display.tscn" id="8_52ca1"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2nx3q")
@@ -34,8 +34,9 @@ position = Vector2(310, -1)
 
 [node name="Inventory" parent="." instance=ExtResource("6_82pw5")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4lh8e")
+volume_db = -7.0
 autoplay = true
 
 [node name="MoveCounterDisplay" parent="." instance=ExtResource("8_52ca1")]
@@ -43,6 +44,7 @@ position = Vector2(1405, 231)
 
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
 [connection signal="request_tomato" from="Pet" to="Inventory" method="_on_pet_request_tomato"]
+[connection signal="sung_to_sleep" from="Pet" to="." method="_on_pet_sung_to_sleep"]
 [connection signal="harvested" from="Crop" to="Inventory" method="_on_crop_harvested"]
 [connection signal="has_no_tomato" from="Inventory" to="Pet" method="_on_inventory_has_no_tomato"]
 [connection signal="has_tomato" from="Inventory" to="Pet" method="_on_inventory_has_tomato"]

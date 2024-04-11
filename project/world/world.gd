@@ -5,7 +5,18 @@ extends Node2D
 @onready var _crop : Crop = $Crop
 
 func _ready() -> void:
-	$Player.global_position = _board.global_position
+	MoveCounter.connect("day_ended", _move_player_to_start)
+	SFX.connect("whistle_finished", _move_player_to_start)
+	_move_player_to_start()
 	_pet.global_position = _board.get_unoccupied_tile().global_position
 	_crop.global_position = _board.get_unoccupied_tile().global_position
 
+
+func _move_player_to_start() -> void:
+	$MoveCounterDisplay.reset_display()
+	$Player.global_position = _board.global_position
+
+
+func _on_pet_sung_to_sleep() -> void:
+	SFX.play_whistle()
+	# Stop movement lease

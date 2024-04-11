@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8dxlfdm0e5n"]
+
+[ext_resource type="Script" path="res://common/sfx.gd" id="1_jsk6k"]
+[ext_resource type="AudioStream" uid="uid://bcrooesfn72sp" path="res://common/lullaby_whistle.wav" id="2_3w6tj"]
+
+[node name="SFX" type="Node"]
+script = ExtResource("1_jsk6k")
+
+[node name="Whistle_song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3w6tj")
+volume_db = 7.0
+
+[connection signal="finished" from="Whistle_song" to="." method="_on_whistle_song_finished"]

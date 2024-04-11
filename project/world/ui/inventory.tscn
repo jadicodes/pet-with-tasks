@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6qvdu61t8yqp"]
 
-[ext_resource type="Script" path="res://world/inventory.gd" id="1_arq8y"]
-[ext_resource type="Texture2D" uid="uid://dkxq7cmk2nrvn" path="res://world/storage_box.png" id="2_ao8qb"]
-[ext_resource type="Texture2D" uid="uid://y051nn1nheb3" path="res://world/crop_tomato_inventory.png" id="2_etbwg"]
+[ext_resource type="Script" path="res://world/ui/inventory.gd" id="1_arq8y"]
+[ext_resource type="Texture2D" uid="uid://dkxq7cmk2nrvn" path="res://world/ui/storage_box.png" id="2_ao8qb"]
+[ext_resource type="Texture2D" uid="uid://y051nn1nheb3" path="res://world/ui/crop_tomato_inventory.png" id="2_etbwg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bibf0"]
 font_size = 24

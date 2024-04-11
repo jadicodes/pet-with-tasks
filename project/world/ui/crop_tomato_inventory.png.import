@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkxq7cmk2nrvn"
-path="res://.godot/imported/storage_box.png-f0cb9fc7fa27621287741ac9ca28c420.ctex"
+uid="uid://y051nn1nheb3"
+path="res://.godot/imported/crop_tomato_inventory.png-197412cfe22874ee409affe13b0a9eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/storage_box.png"
-dest_files=["res://.godot/imported/storage_box.png-f0cb9fc7fa27621287741ac9ca28c420.ctex"]
+source_file="res://world/ui/crop_tomato_inventory.png"
+dest_files=["res://.godot/imported/crop_tomato_inventory.png-197412cfe22874ee409affe13b0a9eb9.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@ enum Age {
 	ADULT,
 }
 
-
+signal sung_to_sleep
 signal request_tomato
 
 
@@ -56,6 +56,7 @@ func _grow_up() -> void:
 
 
 func _on_sing_button_pressed() -> void:
+	sung_to_sleep.emit()
 	MoveCounter.decrease()
 	if _had_food:
 		_grow_up()
