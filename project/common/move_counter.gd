@@ -19,7 +19,7 @@ func reset() -> void:
 
 
 func _check_if_zero() -> void:
-	if moves_remaining <= 0:
+	if moves_remaining <= 0 and not SFX.check_whistle():
 		day_ended.emit()
 		reset()
 

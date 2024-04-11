@@ -12,3 +12,7 @@ func play_whistle() -> void:
 
 func _on_whistle_song_finished():
 	whistle_finished.emit()
+
+
+func check_whistle() -> bool:
+	return _whistle.playing
