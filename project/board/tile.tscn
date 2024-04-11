@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dasg3x8emo7y1"]
+[gd_scene load_steps=11 format=3 uid="uid://dasg3x8emo7y1"]
 
 [ext_resource type="Script" path="res://board/tile.gd" id="1_euijp"]
 [ext_resource type="Texture2D" uid="uid://bppoohvwhpjcs" path="res://board/tile_grass.png" id="2_14a3p"]
 [ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://common/player_detector.tscn" id="3_4kw5a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ce8m"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58iqo"]
 size = Vector2(200, 200)
@@ -55,6 +62,16 @@ _data = {
 collision_mask = 0
 script = ExtResource("1_euijp")
 
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="Highlight" type="Panel" parent="CanvasGroup"]
+offset_top = -1.0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ce8m")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(100, 100)
 texture = ExtResource("2_14a3p")
@@ -80,28 +97,6 @@ debug_color = Color(0.870588, 0.298039, 0.466667, 0.419608)
 
 [node name="PlayerDetector" parent="." instance=ExtResource("3_4kw5a")]
 collision_layer = 0
-
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
-offset_top = -1.0
-offset_right = 200.0
-offset_bottom = 6.0
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasGroup"]
-offset_right = 7.0
-offset_bottom = 195.0
-
-[node name="ColorRect3" type="ColorRect" parent="CanvasGroup"]
-offset_top = 195.0
-offset_right = 200.0
-offset_bottom = 202.0
-
-[node name="ColorRect4" type="ColorRect" parent="CanvasGroup"]
-offset_left = 193.0
-offset_right = 200.0
-offset_bottom = 200.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
