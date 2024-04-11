@@ -15,6 +15,10 @@ var _baby_image := preload("res://object/pet/hedgehog_baby.png")
 var _teen_image := preload("res://object/pet/hedgehog_teen_standing.png")
 var _adult_image := preload("res://object/pet/hedgehog_adult_standing.png")
 
+var _baby_sleep_image := preload("res://object/pet/hedgehog_baby_sleeping.png")
+var _teen_sleep_image := preload("res://object/pet/hedgehog_teen_sleeping.png")
+var _adult_sleep_image := preload("res://object/pet/hedgehog_adult_sleeping.png")
+
 @onready var _feed_button: Button = $FeedButton
 @onready var _sing_button: Button = $SingButton
 
@@ -58,9 +62,12 @@ func _grow_up() -> void:
 func _on_sing_button_pressed() -> void:
 	sung_to_sleep.emit()
 	MoveCounter.decrease()
-	if _had_food:
-		_grow_up()
-		_had_food = false
+	if _growth_state == Age.BABY:
+		pet_sprite.texture = _baby_sleep_image
+	elif _growth_state == Age.TEEN:
+		pet_sprite.texture = _teen_sleep_image
+	else:
+		pet_sprite.texture = _adult_sleep_image
 
 
 func _on_feed_button_pressed() -> void:
@@ -83,3 +90,9 @@ func _on_inventory_has_no_tomato():
 func _on_player_detector_next_to_player_changed():
 	_sing_button.disabled = not _player_detector.next_to_player
 	_feed_button.disabled = not (_tomato_count_valid and  _player_detector.next_to_player)
+
+func wake_up():
+	if _had_food:
+		_grow_up()
+		_had_food = false
+	_growth_state = _growth_state
