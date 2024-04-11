@@ -33,7 +33,7 @@ func _end_day() -> void:
 	_animation.play("nighttime")
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(anim_name: String) -> void:
 	if anim_name == "nighttime":
 		_reset()
 		_animation.play("daytime")

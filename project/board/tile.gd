@@ -8,8 +8,11 @@ var _selected := false
 var _mouse_entered := false
 var _holding := false
 var held_object
+
 @onready var _tile_sprite: Sprite2D = $Sprite2D
 @onready var _player_detector: PlayerDetector = $PlayerDetector
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _highlight: Panel = $Highlight
 
 
 func _input(event) -> void:
@@ -47,16 +50,15 @@ func _on_mouse_catcher_mouse_exited() -> void:
 	_mouse_entered = false
 
 
-func _on_object_detector_area_entered(area) -> void:
+func _on_object_detector_area_entered(area: Area2D) -> void:
 	_holding = true
 	held_object = area.get_parent()
 
 
-func _on_player_detector_next_to_player_changed():
+func _on_player_detector_next_to_player_changed() -> void:
 	if _player_detector.next_to_player:
-		$CanvasGroup.show()
-		$AnimationPlayer.play("fade_in_and_out")
+		_highlight.show()
+		_animation_player.play("fade_in_and_out")
 	else:
-		$CanvasGroup.hide()
-		$AnimationPlayer.stop()
-		
+		_highlight.hide()
+		_animation_player.stop()
