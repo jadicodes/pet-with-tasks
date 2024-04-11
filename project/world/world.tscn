@@ -42,6 +42,12 @@ autoplay = true
 [node name="MoveCounterDisplay" parent="." instance=ExtResource("8_52ca1")]
 position = Vector2(1405, 29)
 
+[node name="ClickStopper" type="ColorRect" parent="."]
+offset_right = 1611.0
+offset_bottom = 913.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
 [connection signal="request_tomato" from="Pet" to="Inventory" method="_on_pet_request_tomato"]
 [connection signal="sung_to_sleep" from="Pet" to="." method="_on_pet_sung_to_sleep"]
