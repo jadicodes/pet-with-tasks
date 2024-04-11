@@ -52,6 +52,13 @@ func _ready() -> void:
 	_sing_button.disabled = true
 
 
+func wake_up() -> void:
+	if _had_food:
+		_grow_up()
+		_had_food = false
+	_growth_state = _growth_state
+
+
 func _grow_up() -> void:
 	if _growth_state == Age.BABY:
 		_growth_state = Age.TEEN
@@ -79,20 +86,15 @@ func _on_inventory_tomato_consumed() -> void:
 	MoveCounter.decrease()
 
 
-func _on_inventory_has_tomato():
+func _on_inventory_has_tomato() -> void:
 	_tomato_count_valid = true
 
 
-func _on_inventory_has_no_tomato():
+func _on_inventory_has_no_tomato() -> void:
 	_tomato_count_valid = false
 
 
-func _on_player_detector_next_to_player_changed():
+func _on_player_detector_next_to_player_changed() -> void:
 	_sing_button.disabled = not _player_detector.next_to_player
 	_feed_button.disabled = not (_tomato_count_valid and  _player_detector.next_to_player)
 
-func wake_up():
-	if _had_food:
-		_grow_up()
-		_had_food = false
-	_growth_state = _growth_state

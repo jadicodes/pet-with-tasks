@@ -9,22 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://cmwdvr8bgn6vr" path="res://world/game_theme.ogg" id="7_4lh8e"]
 [ext_resource type="PackedScene" uid="uid://cj2jyu7eh2hd0" path="res://world/ui/move_counter_display.tscn" id="8_52ca1"]
 
-[sub_resource type="Animation" id="Animation_1deby"]
-resource_name = "nighttime"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ClickStopper:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_1a0yf"]
 length = 0.001
 tracks/0/type = "value"
@@ -54,6 +38,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1deby"]
+resource_name = "nighttime"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClickStopper:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oxyip"]
@@ -114,3 +114,4 @@ libraries = {
 [connection signal="has_no_tomato" from="Inventory" to="Pet" method="_on_inventory_has_no_tomato"]
 [connection signal="has_tomato" from="Inventory" to="Pet" method="_on_inventory_has_tomato"]
 [connection signal="tomato_consumed" from="Inventory" to="Pet" method="_on_inventory_tomato_consumed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
