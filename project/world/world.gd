@@ -37,5 +37,7 @@ func _on_animation_player_animation_finished(anim_name: String) -> void:
 	if anim_name == "nighttime":
 		_reset()
 		_animation.play("daytime")
+		SFX.play_rooster()
 	elif anim_name == "daytime":
 		_click_stopper.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		

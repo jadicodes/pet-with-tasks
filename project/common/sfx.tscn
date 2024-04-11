@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://n8dxlfdm0e5n"]
+[gd_scene load_steps=4 format=3 uid="uid://n8dxlfdm0e5n"]
 
 [ext_resource type="Script" path="res://common/sfx.gd" id="1_jsk6k"]
 [ext_resource type="AudioStream" uid="uid://bcrooesfn72sp" path="res://common/lullaby_whistle.wav" id="2_3w6tj"]
+[ext_resource type="AudioStream" uid="uid://bx13goqncacx1" path="res://common/rooster_call.wav" id="3_uhor8"]
 
 [node name="SFX" type="Node"]
 script = ExtResource("1_jsk6k")
 
-[node name="Whistle_song" type="AudioStreamPlayer" parent="."]
+[node name="Whistle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3w6tj")
 volume_db = 7.0
 
-[connection signal="finished" from="Whistle_song" to="." method="_on_whistle_song_finished"]
+[node name="Rooster" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uhor8")
+volume_db = -4.0
+
+[connection signal="finished" from="Whistle" to="." method="_on_whistle_song_finished"]
