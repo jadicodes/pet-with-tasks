@@ -40,7 +40,7 @@ volume_db = -7.0
 autoplay = true
 
 [node name="MoveCounterDisplay" parent="." instance=ExtResource("8_52ca1")]
-position = Vector2(1405, 231)
+position = Vector2(1405, 29)
 
 [connection signal="confirmed_move" from="Board" to="Player" method="_on_board_confirmed_move"]
 [connection signal="request_tomato" from="Pet" to="Inventory" method="_on_pet_request_tomato"]
