@@ -10,12 +10,11 @@ func _ready() -> void:
 
 	for y in max_moves:
 		var rect = TextureRect.new()
-		var size := 40
-		var position_offset :=  size + 20
+		var size := 80
+		var position_offset :=  size
 		rect.position.y = y * position_offset + $Heading.size.y
 		rect.size = Vector2(size,size)
 		rect.texture = preload("res://world/ui/energy_granola.png")
-		rect.scale = Vector2(2,2)
 		add_child(rect)
 		_color_array.append(rect)
 
