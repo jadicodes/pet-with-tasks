@@ -25,3 +25,5 @@ func _move_player_to_start() -> void:
 func _on_pet_sung_to_sleep() -> void:
 	_click_stopper.mouse_filter = Control.MOUSE_FILTER_STOP
 	SFX.play_whistle()
+	$AnimationPlayer.play("nighttime")
+	#$AnimationPlayer.play("daytime")
