@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _move_player_to_start() -> void:
 	$MoveCounterDisplay.reset_display()
+	MoveCounter.reset()
 	$Player.global_position = _board.global_position
 
 

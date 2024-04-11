@@ -14,10 +14,14 @@ func decrease() -> void:
 	_check_if_zero()
 
 
+func reset() -> void:
+	moves_remaining = _MAXIMUM_MOVES
+
+
 func _check_if_zero() -> void:
 	if moves_remaining <= 0:
 		day_ended.emit()
-		moves_remaining = _MAXIMUM_MOVES
+		reset()
 
 
 func get_maximum_moves() -> int:

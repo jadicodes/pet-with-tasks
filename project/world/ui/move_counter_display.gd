@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func reset_display() -> void:
-	for i in MoveCounter.moves_remaining:
+	for i in _color_array.size():
 		_color_array[i].show()
 
 
