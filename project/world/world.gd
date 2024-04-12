@@ -3,6 +3,7 @@ extends Node2D
 @onready var _board : Board = $Board
 @onready var _pet : Pet = $Pet
 @onready var _crop : Crop = $Crop
+@onready var _player : Player = $Player
 @onready var _click_stopper : ColorRect = $ClickStopper
 @onready var _animation : AnimationPlayer = $AnimationPlayer
 
@@ -19,18 +20,21 @@ func _ready() -> void:
 func _reset() -> void:
 	$MoveCounterDisplay.reset_display()
 	MoveCounter.reset()
-	$Player.global_position = _board.global_position
+	_player.global_position = _board.global_position
+	_player.stand()
 	_pet.wake_up()
 
 
 func _on_pet_sung_to_sleep() -> void:
 	_click_stopper.mouse_filter = Control.MOUSE_FILTER_STOP
 	SFX.play_whistle()
+	_player.whistle()
 
 
 func _end_day() -> void:
 	_click_stopper.mouse_filter = Control.MOUSE_FILTER_STOP
 	_animation.play("nighttime")
+	_player.sleep()
 
 
 func _on_animation_player_animation_finished(anim_name: String) -> void:

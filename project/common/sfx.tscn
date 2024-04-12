@@ -13,6 +13,6 @@ volume_db = 7.0
 
 [node name="Rooster" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uhor8")
-volume_db = -4.0
+volume_db = -10.0
 
 [connection signal="finished" from="Whistle" to="." method="_on_whistle_song_finished"]
