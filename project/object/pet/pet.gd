@@ -20,7 +20,7 @@ var _teen_sleep_image := preload("res://object/pet/hedgehog_teen_sleeping.png")
 var _adult_sleep_image := preload("res://object/pet/hedgehog_adult_sleeping.png")
 
 @onready var _feed_button: Button = $FeedButton
-@onready var _sing_button: Button = $SingButton
+@onready var _sing_button: TextureButton = $SingButton
 
 var _had_food := false
 var _tomato_count_valid := false:

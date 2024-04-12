@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq4jj6xw16jmt"]
+[gd_scene load_steps=12 format=3 uid="uid://dq4jj6xw16jmt"]
 
 [ext_resource type="Script" path="res://object/crop/crop.gd" id="1_unr3p"]
 [ext_resource type="Texture2D" uid="uid://bpns0ef1qr1ce" path="res://object/crop/crop_baby.png" id="2_llori"]
 [ext_resource type="PackedScene" uid="uid://6uxofj1uehuv" path="res://common/player_detector.tscn" id="3_h6x1l"]
+[ext_resource type="Texture2D" uid="uid://ca3nkrcnmbcwe" path="res://object/crop/button_grow_unpressed.png" id="4_oaowq"]
+[ext_resource type="Texture2D" uid="uid://n04ypuy4elrt" path="res://object/crop/button_grow_pressed.png" id="5_xps8f"]
+[ext_resource type="Texture2D" uid="uid://bkx04d0kckajg" path="res://object/crop/button_grow_hover.png" id="6_wymk1"]
+[ext_resource type="Texture2D" uid="uid://bhroxorf1pnxu" path="res://object/crop/button_grow_disabled.png" id="7_hm6ix"]
+[ext_resource type="Texture2D" uid="uid://ccqvjsor3u0wk" path="res://object/crop/button_harvest_unpressed.png" id="8_83tk5"]
+[ext_resource type="Texture2D" uid="uid://dqyt1omli8uaf" path="res://object/crop/button_harvest_pressed.png" id="9_q2ok4"]
+[ext_resource type="Texture2D" uid="uid://c2hmx0utrf3w4" path="res://object/crop/button_harvest_hover.png" id="10_h3k1m"]
+[ext_resource type="Texture2D" uid="uid://lxal020kryv8" path="res://object/crop/button_harvest_disabled.png" id="11_q0prh"]
 
 [node name="Crop" type="Node2D"]
 script = ExtResource("1_unr3p")
@@ -13,12 +21,25 @@ texture = ExtResource("2_llori")
 
 [node name="PlayerDetector" parent="." instance=ExtResource("3_h6x1l")]
 
-[node name="Button" type="Button" parent="."]
-offset_left = 12.0
-offset_top = 167.0
-offset_right = 82.0
-offset_bottom = 198.0
-text = "blow up"
+[node name="GrowButton" type="TextureButton" parent="."]
+offset_top = 141.0
+offset_right = 60.0
+offset_bottom = 201.0
+texture_normal = ExtResource("4_oaowq")
+texture_pressed = ExtResource("5_xps8f")
+texture_hover = ExtResource("6_wymk1")
+texture_disabled = ExtResource("7_hm6ix")
+
+[node name="HarvestButton" type="TextureButton" parent="."]
+visible = false
+offset_top = 141.0
+offset_right = 60.0
+offset_bottom = 201.0
+texture_normal = ExtResource("8_83tk5")
+texture_pressed = ExtResource("9_q2ok4")
+texture_hover = ExtResource("10_h3k1m")
+texture_disabled = ExtResource("11_q0prh")
 
 [connection signal="next_to_player_changed" from="PlayerDetector" to="." method="_on_player_detector_next_to_player_changed"]
-[connection signal="pressed" from="Button" to="." method="_grow_up"]
+[connection signal="pressed" from="GrowButton" to="." method="_on_grow_button_pressed"]
+[connection signal="pressed" from="HarvestButton" to="." method="_on_harvest_button_pressed"]
