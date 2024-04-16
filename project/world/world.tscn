@@ -76,6 +76,7 @@ offset_bottom = 928.0
 color = Color(0.501961, 0.403922, 0.333333, 1)
 
 [node name="Board" parent="." instance=ExtResource("1_qvm43")]
+position = Vector2(316, 20)
 
 [node name="Player" parent="." instance=ExtResource("2_wcpa1")]
 position = Vector2(565, 227)
