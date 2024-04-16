@@ -23,6 +23,7 @@ var _adult_sleep_image := preload("res://object/pet/hedgehog_adult_sleeping.png"
 @onready var _sing_button: TextureButton = $SingButton
 
 var _had_food := false
+var _sung_to_sleep := false
 var _tomato_count_valid := false:
 	set(state):
 		_tomato_count_valid = state
@@ -53,9 +54,10 @@ func _ready() -> void:
 
 
 func wake_up() -> void:
-	if _had_food:
+	if _had_food and _sung_to_sleep:
 		_grow_up()
-		_had_food = false
+	_had_food = false
+	_sung_to_sleep = false
 	_growth_state = _growth_state
 
 
@@ -67,6 +69,7 @@ func _grow_up() -> void:
 
 
 func _on_sing_button_pressed() -> void:
+	_sung_to_sleep = true
 	sung_to_sleep.emit()
 	MoveCounter.decrease()
 	if _growth_state == Age.BABY:
