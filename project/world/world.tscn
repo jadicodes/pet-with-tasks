@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwrxe0uh73uxr"]
+[gd_scene load_steps=16 format=3 uid="uid://cwrxe0uh73uxr"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_2nx3q"]
 [ext_resource type="PackedScene" uid="uid://cckb54e8hv4e0" path="res://board/board.tscn" id="1_qvm43"]
@@ -9,9 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b6qvdu61t8yqp" path="res://world/ui/inventory.tscn" id="6_82pw5"]
 [ext_resource type="AudioStream" uid="uid://cmwdvr8bgn6vr" path="res://world/game_theme.ogg" id="7_4lh8e"]
 [ext_resource type="PackedScene" uid="uid://cj2jyu7eh2hd0" path="res://world/ui/move_counter_display.tscn" id="8_52ca1"]
+[ext_resource type="Texture2D" uid="uid://ljxves0s6wlq" path="res://world/sign.png" id="10_llmhx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m5cys"]
 font_size = 22
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_1a0yf"]
 length = 0.001
@@ -98,8 +101,10 @@ stream = ExtResource("7_4lh8e")
 volume_db = -7.0
 autoplay = true
 
-[node name="MoveCounterDisplay" parent="." instance=ExtResource("8_52ca1")]
-position = Vector2(1443, 0)
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(1294, 292.5)
+scale = Vector2(1.3865, 1.425)
+texture = ExtResource("10_llmhx")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1188.0
@@ -111,6 +116,9 @@ label_settings = SubResource("LabelSettings_m5cys")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="MoveCounterDisplay" parent="." instance=ExtResource("8_52ca1")]
+position = Vector2(1443, 0)
 
 [node name="ClickStopper" type="ColorRect" parent="."]
 offset_right = 1611.0
